@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Especificaciones de Autos</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Especificaciones de Autos</h1>
+      </div>
+    </div>
+
+    <div class="text-center"><button class="btn btn-primary btn-lg" id="load-cars">Mostrar Autos</button></div>
+
+  <div class="cars">
+
+  </div>
+
+<script id="cars-template" type="text/x-handlebars-template">
+    <!-- este es solo un ejemplo para mostrarte cómo debe quedar -->
+    {{#each cars}}
+      <div class="row car">
+        <div class="col-sm-5 col-md-4"><img src={{this.imageUrl}} alt= {{this.name}} class="img-responsive img-thumbnail"></div>
+        <div class="col-sm-7 col-md-8">
+          <h3>{{this.name}}<small>{{this.released}}</small></h3>
+          <div class="row specs">
+            <div class="col-xs-3 text-center">
+              <span class="spec-value">{{this.power}}</span>
+              <span class="spec-label">Potencia</span>
+            </div>
+            <div class="col-xs-3 text-center">
+              <span class="spec-value">{{this.weight}}</span>
+              <span class="spec-label">Peso</span>
+            </div>
+            <div class="col-xs-3 text-center">
+              {{#if this.turbo}}
+                <span class="spec-value">Si</span>
+              {{else}}
+                <span class="spec-value">No</span>
+              {{/if}}
+              <span class="spec-label">Turbo</span>
+            </div>
+            <div class="col-xs-3 text-center">
+              <span class="spec-value">{{this.speed}}</span>
+              <span class="spec-label">Velocidad Max</span>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    {{/each}}
+    
+</script>
+
+<!-- Librerias -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+
+<!--Archivo js-->
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show Countries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <button>Mostrar paises</button>
+
+  </div>
+
+  <!--Plantilla handlebars-->
+
+  <script id="table-template" type="text/x-handlebars-template">
+    <table>
+      <thead>
+        <tr>
+          <td>Flag</td>
+          <td>Code</td>
+          <td>Name</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each countries}}
+         <tr>
+           <td><img src={{this.flag_url}}></td>
+           <td>{{this.code}}</td>
+           <td>{{this.name}}</td>
+         </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--Librerias-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+
+  <script src="app.js"></script>
+  
+</body>
+</html>

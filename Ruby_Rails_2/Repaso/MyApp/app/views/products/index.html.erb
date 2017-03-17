@@ -1,0 +1,15 @@
+<h1>Productos del Supermercado</h1>
+<table>
+   <thead>
+      <th>Producto</th>
+      <th>Descripcion</th>
+      <th>Valor</th>
+   </thead>
+  <% @products.each do |product| %>
+   <tr>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+   </tr>
+  <% end %>
+</table>

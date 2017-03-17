@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Ejemplos</title>
+</head>
+<body>
+  <!-- <h1>Where do you want to go?</h1>
+  <p>Plan your next adventure</p>
+  <script type="text/javascript">
+   $(document).ready(function(){
+     $("h1").text("Where to go?")
+   });
+  </script> > -->
+  <h1>Where do you want to go?</h1>
+  <h2>Travel Destinations</h2>
+  <p>Plan your next adventure</p>
+  <ul id="destinations">
+    <li>Rome</li>
+    <li>Paris</li>
+    <li>Marinilla</li>
+    <li class ='promo'>
+      <h2>Río</h2>
+      <button>Get Price</button>
+    </li>
+    <li class="promo">
+      <h2>Venecia</h2>
+      <button>Get Price</button>
+    	
+    </li>
+  </ul>
+
+
+   <!--<script type="text/javascript" src = "jquery.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   <script type="text/javascript">
+   	$(document).ready(function(){
+      alert("hola");
+     $('button').on('click', function(){
+       var price = $('<p>From $300 </p>');
+       $(this).after(price);
+       $(this).remove();
+     });
+
+     
+   	});
+   </script>
+
+</body>
+</html>

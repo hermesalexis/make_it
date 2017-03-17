@@ -1,0 +1,109 @@
+var username = $('.form-group:nth-child(1)');  
+var password = $('.form-group:nth-child(2)');
+var terms = $('.terms-checkbox');
+ 
+// Logica valida usuario
+function userName(){
+  return /^$|\s+/.test($('#username').val()) 
+}
+
+function errorUserName(){
+  username.addClass('has-error');  
+  username.find('.help-block').text("ingresa un usuario");
+}
+
+function correctUserName(){
+  username.removeClass('has-error');
+  username.find('.help-block').text("");
+}
+
+
+function evalUserName(){
+  if(userName()){
+    errorUserName();  
+  }else{
+    correctUserName();
+  }
+}
+
+/////Logica valida password
+function blankPassword(){
+  return /^$/.test($('#password').val());
+}
+
+function lengthPassword(){
+  return $('#password').val().length; 
+}
+
+function CorrectLenPass(){
+ return ( lengthPassword() < 6 ) || ( lengthPassword() > 40); 
+}
+
+function addClassErrorPass(){
+ password.addClass('has-error');    
+}
+
+function messageErrorPass(message){
+ return password.find('.help-block').text(message);
+}
+
+function errorPassBlank(){
+   addClassErrorPass();
+   messageErrorPass("Ingresa una contraseña")
+}
+
+function errorPassLen(){
+  addClassErrorPass();
+  messageErrorPass("Debe contener mínimo 6 caracteres");
+}
+
+function correctPass(){
+  password.removeClass('has-error');
+  password.find('.help-block').text("");
+}
+
+function evalPassword(){
+  if( blankPassword() ){
+    errorPassBlank();
+  }else if( CorrectLenPass()){   
+    errorPassLen();
+  }else{
+    correctPass();
+  } 
+}
+
+///logica terminos y condiciones
+
+function acceptTerms(){
+  return $('#terms').is(':checked');  
+}
+
+function termsUnchecked(){
+  terms.addClass("has-error");
+}
+
+function termsChecked(){
+ terms.removeClass("has-error"); 
+}
+
+function evalTerms(){
+  if( !acceptTerms() ){
+    termsUnchecked();
+  }else{
+    termsChecked(); 
+  }  
+}
+
+$('form').on('submit', function(e) {
+  e.preventDefault(); // previene la acción por defecto (enviar el formulario)
+  // escribe acá tu solución
+  evalUserName();
+  evalPassword();
+  evalTerms();
+  
+});
+     
+
+
+
+

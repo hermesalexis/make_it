@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram fetcher</title>
+</head>
+<body>
+  <div class="photos"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    var accessToken = "220412106.1677ed0.d0477b9f81a0405d8d83c6d00822cdcd";
+    $.ajax({
+        url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + accessToken, 
+        dataType: "jsonp",
+      }).done(function(response){
+          var photos = response.data;
+          photos.forEach(function(photo){
+           $(".photos").append('<img src="' + photo.images.low_resolution.url + '">');
+          });
+      });
+  </script>
+</body>
+</html>

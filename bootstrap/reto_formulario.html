@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registro</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+      .container{
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h1>Registro</h1>        
+          <form role="form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+
+            <div class="form-group">
+              <label for="psw_contraseña">Contraseña</label>
+              <input type="password" class="form-control" id="psw_contraseña">
+            </div>
+
+            <div class="form-group">
+              <label for="psw_conf_contraseña">Confirmar Contraseña</label>
+              <input type="password" class="form-control" id="psw_conf_contraseña">
+            </div>
+
+            <div class="form-group">
+              <label for="ddw_paises">País</label>
+              <select class="form-control" id="ddw_paises">
+                <option>Colombia</option>
+                <option>Venezuela</option>
+                <option>Brasil</option>
+              </select>
+            </div>
+
+            <div class="checkbox">
+              <label><input type="checkbox">Recordarme</label>
+            </div>
+
+            <button type="button" class="btn btn-success">Registrarme</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
